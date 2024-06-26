@@ -1,0 +1,5 @@
+# SolvePosition.srv
+geometry_msgs/Vector3 object_position  # XYZ coordinates of the bird/turtle in the world frame
+---
+string message # String to store any errors in solution
+bool success # Determine if position validation was successful or not

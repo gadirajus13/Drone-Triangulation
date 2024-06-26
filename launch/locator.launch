@@ -1,0 +1,14 @@
+<launch>
+  <!-- Load camera intrinsics from YAML file -->
+  <rosparam command="load" file="$(find vision_challenge)/config/camera_intrinsics.yaml" />
+
+  <!-- Start the configuration node -->
+  <node name="configuration_node" pkg="vision_challenge" type="configuration_node" output="screen">
+  </node>
+
+  <!-- Start the solver node -->
+  <node name="solver_node" pkg="vision_challenge" type="solver_node" output="screen">
+  </node>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find vision_challenge)/config/bird.rviz" required="true" />
+</launch>
